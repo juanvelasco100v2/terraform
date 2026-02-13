@@ -31,6 +31,7 @@ module "stock_update_queue" {
     Purpose     = "StockUpdates"
   }
 }
+#sqs order
 module "manage_order_queue" {
   source     = "./modules/sqs"
   queue_name = "manage-order-queue"
