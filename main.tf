@@ -68,7 +68,10 @@ resource "aws_sqs_queue_policy" "allow_eventbridge" {
       {
         Effect = "Allow"
         Principal = {
-          Service = "events.amazonaws.com"
+          Service = [
+            "events.amazonaws.com",
+            "scheduler.amazonaws.com"
+          ]
         }
         Action   = "sqs:SendMessage"
         Resource = module.stock_update_queue.queue_arn
