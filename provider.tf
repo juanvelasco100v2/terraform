@@ -7,12 +7,12 @@ terraform {
   }
 }
 
-# CONFIGURACIÓN ORIGINAL (COMENTADA)
+# config provider
 # provider "aws" {
 #   region = var.aws_region
 # }
 
-# CONFIGURACIÓN PARA LOCALSTACK
+# config LOCALSTACK
 provider "aws" {
   region                      = var.aws_region
   access_key                  = "test"
@@ -46,7 +46,6 @@ provider "aws" {
     stepfunctions  = "http://localstack:4566"
     sts            = "http://localstack:4566"
 
-    # Agregados para solucionar el error de EventBridge
     eventbridge = "http://localstack:4566"
     events      = "http://localstack:4566"
     scheduler   = "http://localstack:4566"
